@@ -1,0 +1,186 @@
+JIRA TASK DOCUMENTATION
+Install and Configure Jenkins on AWS EC2 (SUSE Linux)
+
+1. OBJECTIVE
+Launch an AWS EC2 instance running SUSE Linux Enterprise Server (SLES) 16.0, install Jenkins using the Jenkins RPM repository, configure network access, enable automatic startup, and complete the initial Jenkins setup through a browser.
+
+2. ENVIRONMENT AND PREREQUISITES
+Cloud platform: AWS EC2
+Operating system: SUSE Linux Enterprise Server 16.0
+SSH client: PuTTY
+Login username: ec2-user
+Java: OpenJDK 21
+Jenkins version observed: 2.580.1
+Jenkins web port: TCP 8080
+SSH port: TCP 22
+Package manager: zypper
+
+Prerequisites:
+- AWS account with permission to launch EC2 instances.
+- EC2 key pair for SSH access.
+- Security group allowing SSH from your IP.
+- Instance with a reachable public IPv4 address.
+
+3. STEP-BY-STEP IMPLEMENTATION
+
+STEP 1: LAUNCH THE EC2 INSTANCE
+1. Open AWS Management Console.
+2. Go to EC2 > Launch instance.
+3. Enter a name, such as jenkins-suse-server.
+4. Select SUSE Linux Enterprise Server 16.0.
+5. Select an appropriate instance type.
+6. Select or create a key pair.
+7. Configure the security group.
+8. Launch the instance and wait until its state is Running.
+
+STEP 2: CONFIGURE THE SECURITY GROUP
+Go to EC2 > Instances > select your instance > Security > Security groups > Edit inbound rules.
+
+Add these rules:
+- SSH | TCP | Port 22 | Source: My IP
+- Custom TCP | TCP | Port 8080 | Source: My IP
+
+Port 22 permits SSH access. Port 8080 permits access to the Jenkins web interface. Restrict access to trusted IP addresses. For production, configure HTTPS using a properly secured reverse proxy or load balancer.
+
+STEP 3: CONNECT USING SSH
+Open PuTTY and enter the EC2 public IPv4 address as the host. Configure the appropriate private key and connect with username:
+
+ec2-user
+
+Verify the operating system:
+    cat /etc/os-release
+
+Expected output should identify SUSE Linux Enterprise Server 16.0.
+
+STEP 4: UPDATE REPOSITORIES AND INSTALL JAVA
+Refresh package metadata:
+    sudo zypper refresh
+
+Install Java 21 and dependencies:
+    sudo zypper install java-21-openjdk fontconfig wget
+
+Verify Java:
+    java -version
+
+The output should identify OpenJDK 21.
+
+STEP 5: ADD THE JENKINS REPOSITORY
+Add the Jenkins stable RPM repository:
+    sudo zypper addrepo -f https://pkg.jenkins.io/opensuse-stable/ jenkins
+
+Refresh repository metadata:
+    sudo zypper refresh
+
+Note: Jenkins publishes an RPM repository for openSUSE; SLES 16 compatibility should be verified in the target environment. In this lab, the Jenkins package installed successfully.
+
+STEP 6: INSTALL JENKINS
+Install Jenkins:
+    sudo zypper install jenkins
+
+Review the package prompt and confirm the installation when appropriate. If the service unit is not found, verify that the package installation completed successfully.
+
+STEP 7: ENABLE AND START JENKINS
+Reload systemd:
+    sudo systemctl daemon-reload
+
+Enable Jenkins at boot and start it now:
+    sudo systemctl enable --now jenkins
+
+Check service status:
+    sudo systemctl status jenkins
+
+Expected status includes:
+    Loaded: loaded (.../jenkins.service; enabled)
+    Active: active (running)
+
+Verify state:
+    sudo systemctl is-active jenkins
+    sudo systemctl is-enabled jenkins
+
+Expected outputs:
+    active
+    enabled
+
+STEP 8: VERIFY THE WEB SERVER
+Check port 8080:
+    sudo ss -lntp | grep 8080
+
+Test locally:
+    curl -I http://localhost:8080
+
+A response such as HTTP 200, 403, or a redirect indicates Jenkins is responding. An initial 403 response for an anonymous request can be normal because Jenkins protects administrative endpoints.
+
+STEP 9: ACCESS JENKINS IN A BROWSER
+Get the EC2 instance's Public IPv4 address from the AWS Console. Open:
+    http://YOUR-PUBLIC-IP:8080
+
+Replace YOUR-PUBLIC-IP with the actual public IPv4 address. Confirm that inbound TCP port 8080 is allowed from your IP in the attached security group. Use http:// for this lab setup; do not use https:// unless TLS has been configured.
+
+STEP 10: RETRIEVE THE INITIAL ADMINISTRATOR PASSWORD
+In SSH, run:
+    sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+Copy the output and enter it on the Jenkins Unlock Jenkins page. Keep the password private.
+
+STEP 11: INSTALL SUGGESTED PLUGINS
+1. Select Install suggested plugins.
+2. Wait for installation to finish.
+3. Continue when the wizard advances.
+
+STEP 12: CREATE THE ADMINISTRATOR ACCOUNT
+Enter a username, a strong password, full name, and email address.
+Select Save and Continue.
+Confirm the Jenkins URL.
+Select Save and Finish, then Start using Jenkins.
+Verify that the Jenkins dashboard appears.
+
+STEP 13: VERIFY AUTOMATIC STARTUP
+Run:
+    sudo systemctl is-enabled jenkins
+    sudo systemctl is-active jenkins
+
+Expected outputs:
+    enabled
+    active
+
+Optional reboot test:
+    sudo reboot
+
+Reconnect through PuTTY after the instance restarts, then run:
+    sudo systemctl status jenkins
+
+The service should return to active (running).
+
+4. ACCEPTANCE CRITERIA
+- EC2 instance running SLES 16.0: Verified.
+- Jenkins installed successfully: Verified.
+- Jenkins service running: Verified.
+- Automatic startup enabled: Verified.
+- Jenkins web interface accessible: Verified.
+- Initial Jenkins setup completed: Verified.
+
+5. TROUBLESHOOTING COMMANDS
+Jenkins status:
+    sudo systemctl status jenkins
+
+Recent Jenkins logs:
+    sudo journalctl -u jenkins -n 50 --no-pager
+
+Check listening port:
+    sudo ss -lntp | grep 8080
+
+Test local web response:
+    curl -I http://localhost:8080
+
+Refresh repositories:
+    sudo zypper refresh
+
+Check Java:
+    java -version
+
+6. RESULT
+Jenkins was installed and configured on an AWS EC2 instance running SUSE Linux Enterprise Server 16.0. Java 21 was installed, the Jenkins service was enabled for automatic startup, and the web interface was accessed through port 8080. The initial setup was completed by installing suggested plugins and creating the administrator account.
+
+OFFICIAL REFERENCE
+Jenkins Linux installation documentation:
+https://www.jenkins.io/doc/book/installing/linux/
