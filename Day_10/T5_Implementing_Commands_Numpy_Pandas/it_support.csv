@@ -1,0 +1,16 @@
+Ticket_ID,Category,Priority,Resolution_Hours,Affected_Users,SLA_Breached
+T101,Network,High,8,25,Yes
+T102,Software,Medium,4,5,No
+T103,Hardware,High,10,12,Yes
+T104,Network,Low,2,3,No
+T105,Software,High,7,18,Yes
+T106,Database,Critical,12,40,Yes
+T107,Hardware,Medium,5,6,No
+T108,Network,Critical,15,50,Yes
+T109,Software,Low,1,2,No
+T110,Database,High,9,20,Yes
+T111,Hardware,Low,3,4,No
+T112,Network,Medium,6,10,No
+T113,Database,Medium,5,8,No
+T114,Software,Critical,14,35,Yes
+T115,Hardware,High,8,15,Yes

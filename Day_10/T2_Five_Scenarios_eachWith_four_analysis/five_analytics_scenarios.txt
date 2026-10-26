@@ -1,0 +1,149 @@
+FIVE SCENARIOS FOR DESCRIPTIVE, DIAGNOSTIC, PREDICTIVE, AND PRESCRIPTIVE ANALYSIS
+
+TASK: Perform Four Types of Analytics on Five Real-World Scenarios
+
+============================================================
+SCENARIO 1: EMPLOYEE ATTENDANCE AND PRODUCTIVITY ANALYSIS
+
+Problem:
+Employees have frequent absences, late arrivals, or declining productivity.
+
+1. Descriptive Analysis — What happened?
+   - Calculate attendance percentage, number of absences, late arrivals, and average working hours.
+   - Summarize trends by department and month.
+
+2. Diagnostic Analysis — Why did it happen?
+   - Identify departments, weekdays, or periods with higher absenteeism.
+   - Compare attendance patterns across teams and time periods.
+
+3. Predictive Analysis — What may happen next?
+   - Forecast attendance trends for the next month using historical records.
+   - Identify periods when staffing shortages may occur.
+
+4. Prescriptive Analysis — What should be done?
+   - Recommend staffing adjustments, attendance alerts, or workload balancing.
+   - Suggest areas where further investigation may be useful.
+
+Suggested dataset fields:
+Employee ID, department, date, attendance status, late arrival, working hours.
+
+Expected deliverable:
+An attendance analysis report with charts, findings, and recommendations.
+
+============================================================
+SCENARIO 2: HOSPITAL PATIENT WAITING-TIME ANALYSIS
+
+Problem:
+Patients experience long waiting times before consultations.
+
+1. Descriptive Analysis — What happened?
+   - Calculate average waiting time, patient volume, and daily admissions.
+   - Summarize waiting times by department and time of day.
+
+2. Diagnostic Analysis — Why did it happen?
+   - Investigate whether delays are associated with peak hours, staff availability, or department workload.
+   - Compare waiting times across departments and days.
+
+3. Predictive Analysis — What may happen next?
+   - Forecast patient volume and likely waiting-time trends using historical data.
+   - Identify periods that may experience higher demand.
+
+4. Prescriptive Analysis — What should be done?
+   - Recommend appointment scheduling changes and staff allocation.
+   - Suggest ways to reduce congestion during busy periods.
+
+Suggested dataset fields:
+Patient arrival time, consultation start time, department, staff availability, waiting duration.
+
+Expected deliverable:
+A patient waiting-time report with trends, possible causes, forecasts, and recommendations.
+
+Note:
+Use synthetic or anonymized data. Do not include identifiable patient information.
+
+============================================================
+SCENARIO 3: SOFTWARE DEFECT AND BUG ANALYSIS
+
+Problem:
+A software application has recurring defects and a high number of failed test cases.
+
+1. Descriptive Analysis — What happened?
+   - Calculate total bugs, severity distribution, defect closure rate, and test pass percentage.
+   - Summarize defects by software module and release.
+
+2. Diagnostic Analysis — Why did it happen?
+   - Identify modules or release stages associated with recurring defects.
+   - Review defect descriptions, code changes, and test results to investigate likely causes.
+
+3. Predictive Analysis — What may happen next?
+   - Estimate which modules or upcoming releases may have higher defect risk using historical data.
+   - Identify patterns associated with repeated failures.
+
+4. Prescriptive Analysis — What should be done?
+   - Recommend prioritizing high-risk modules, adding automated tests, and performing code reviews.
+   - Suggest regression testing for areas with recurring defects.
+
+Suggested dataset fields:
+Bug ID, software module, severity, creation date, closure date, release, test status.
+
+Expected deliverable:
+A software quality report with defect trends, risk estimates, and improvement actions.
+
+============================================================
+SCENARIO 4: IT SUPPORT TICKET AND SLA ANALYSIS
+
+Problem:
+The IT support team receives many tickets and some are not resolved within their Service Level Agreement (SLA) deadlines.
+
+1. Descriptive Analysis — What happened?
+   - Measure ticket volume, average resolution time, open tickets, and SLA compliance.
+   - Summarize ticket counts by category, priority, and team.
+
+2. Diagnostic Analysis — Why did it happen?
+   - Identify ticket categories, teams, or time periods associated with delays.
+   - Investigate common causes of repeated incidents and SLA breaches.
+
+3. Predictive Analysis — What may happen next?
+   - Estimate future ticket volume and the risk of SLA breaches from historical data.
+   - Identify categories likely to require additional support.
+
+4. Prescriptive Analysis — What should be done?
+   - Recommend ticket prioritization, automated routing, and staffing adjustments during peak periods.
+   - Suggest a knowledge base or self-service guidance for common issues.
+
+Suggested dataset fields:
+Ticket ID, category, priority, assigned team, creation time, resolution time, SLA status.
+
+Expected deliverable:
+An IT support performance report with SLA metrics, likely causes, forecasts, and recommendations.
+
+============================================================
+SCENARIO 5: CI/CD PIPELINE PERFORMANCE ANALYSIS
+
+
+Problem:
+Software builds and deployments are slow or frequently fail.
+
+1. Descriptive Analysis — What happened?
+   - Calculate build success rate, average build duration, deployment frequency, and failure count.
+   - Summarize failures by pipeline stage and project.
+
+2. Diagnostic Analysis — Why did it happen?
+   - Analyze pipeline logs to identify failed tests, dependency errors, configuration issues, or deployment failures.
+   - Compare build durations and failures across stages.
+
+3. Predictive Analysis — What may happen next?
+   - Estimate build failure risk or expected pipeline duration using previous runs.
+   - Identify patterns that may indicate an increased risk of future failures.
+
+4. Prescriptive Analysis — What should be done?
+   - Recommend caching dependencies, parallelizing tests, and improving pipeline validation.
+   - Suggest alerts for repeated failures and unusually long builds.
+
+Suggested dataset fields:
+Build ID, project, start time, duration, status, failed stage, deployment result.
+
+Expected deliverable:
+A CI/CD performance report with build metrics, failure analysis, forecasts, and improvement actions.
+
+
