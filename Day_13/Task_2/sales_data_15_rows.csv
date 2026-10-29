@@ -1,0 +1,16 @@
+Order_ID,Order_Date,Product,Category,Region,Units_Sold,Unit_Price,Revenue
+1001,2026-01-05,Laptop,Electronics,North,2,55000,110000
+1002,2026-01-08,Office Chair,Furniture,South,4,4500,18000
+1003,2026-01-12,Keyboard,Accessories,East,5,1200,6000
+1004,2026-02-03,Monitor,Electronics,West,3,12000,36000
+1005,2026-02-11,Office Desk,Furniture,North,2,8500,17000
+1006,2026-02-18,Mouse,Accessories,South,10,650,6500
+1007,2026-03-02,Laptop,Electronics,East,1,55000,55000
+1008,2026-03-09,Headphones,Accessories,West,6,1800,10800
+1009,2026-03-14,Monitor,Electronics,North,2,12000,24000
+1010,2026-04-04,Office Chair,Furniture,East,3,4500,13500
+1011,2026-04-12,Keyboard,Accessories,South,8,1200,9600
+1012,2026-04-20,Laptop,Electronics,West,2,55000,110000
+1013,2026-05-06,Office Desk,Furniture,South,1,8500,8500
+1004,2026-02-03,Monitor,Electronics,West,3,12000,36000
+1008,2026-03-09,Headphones,Accessories,West,6,1800,10800
