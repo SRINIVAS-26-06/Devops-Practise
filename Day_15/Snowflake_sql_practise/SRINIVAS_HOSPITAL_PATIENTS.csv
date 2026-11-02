@@ -1,0 +1,11 @@
+PATIENT_ID,PATIENT_NAME,AGE,GENDER,DISEASE,DOCTOR_NAME,TREATMENT_COST
+501,Ramesh,45,Male,Diabetes,Dr_Kumar,25000
+502,Sita,32,Female,Fever,Dr_Priya,5000
+503,Arun,60,Male,Heart Disease,Dr_Raj,85000
+504,Divya,28,Female,Asthma,Dr_Kumar,12000
+505,Kiran,50,Male,Diabetes,Dr_Priya,30000
+506,Meena,38,Female,Migraine,Dr_Raj,8000
+507,Anil,65,Male,Heart Disease,Dr_Kumar,95000
+508,Pooja,24,Female,Fever,Dr_Priya,4000
+509,Suresh,55,Male,Asthma,Dr_Raj,15000
+510,Nisha,42,Female,Diabetes,Dr_Kumar,22000
