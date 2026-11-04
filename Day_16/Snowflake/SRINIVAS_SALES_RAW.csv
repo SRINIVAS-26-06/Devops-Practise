@@ -1,0 +1,31 @@
+SALES_ID,CUSTOMER_ID,PRODUCT_NAME,CATEGORY,QUANTITY,UNIT_PRICE,SALE_DATE,PAYMENT_MODE
+5001,101,Laptop,Electronics,2.0,55000,2026-01-05,UPI
+5002,102,Smartphone,Electronics,3.0,22000,05/01/2026,Card
+5003,103,Office Chair,Furniture,4.0,4500,2026/01/08,Cash
+5004,104,Desk,Furniture,2.0,8500,10-Jan-2026,UPI
+5005,105,Headphones,Electronics,5.0,1800,2026-01-12,CARD
+5006,106,Water Bottle,Accessories,10.0,350,13/01/2026,Cash
+5007,107,Monitor,Electronics,2.0,12500,2026-01-15,UPI
+5008,108,Notebook,Stationery,20.0,80,2026/01/17,Card
+5009,109,Keyboard,Electronics,3.0,1500,18-Jan-2026,UPI
+5010,110,Mouse,Electronics,5.0,650,2026-01-20,Cash
+5011,111,Bookshelf,Furniture,1.0,7200,21/01/2026,Card
+5012,112,Pen Set,Stationery,15.0,120,2026-01-23,UPI
+5013,113,Tablet,Electronics,2.0,28000,2026/01/25,CARD
+5014,114,Dining Table,Furniture,1.0,24000,26-Jan-2026,Cash
+5015,115,Backpack,Accessories,4.0,1600,2026-01-28,UPI
+5016,101,Wireless Earbuds,Electronics,2.0,3200,2026-02-01,Card
+5017,102,Desk Lamp,Home Decor,3.0,950,02/02/2026,UPI
+5018,103,Sofa,Furniture,1.0,38000,2026-02-04,Cash
+5019,104,USB Cable,Accessories,8.0,180,2026/02/06,Card
+5020,105,Printer,Electronics,1.0,14500,07-Feb-2026,UPI
+5021,106,   smart watch  , electronics ,2.0,6500,2026-02-10,upi
+5022,107,  office table, FURNITURE,1.0,11000,11/02/2026, cash 
+5023,108,BLUETOOTH SPEAKER ,electronics,3.0,2400,2026/02/13,Card
+5024,109, pen drive, ACCESSORIES ,6.0,550,14-Feb-2026,UPI
+5025,110,External HDD,Electronics,1.0,6200,2026-02-16,CARD
+5026,111,   ,Stationery,10.0,45,17/02/2026,Cash
+5027,112,Gaming Mouse,,2.0,2100,2026/02/19,UPI
+5028,113,Webcam,Electronics,,1,2026-02-21,Card
+5029,114,Wall Clock,Home Decor,2.0,850,,Cash
+5030,115,Travel Mug,Accessories,3.0,700,23-Feb-2026,
